@@ -3,7 +3,7 @@ A podcast server and feed generator, dockerised.
 
 ## What this is
 
-I'm no coder and this is a hacky solution that I put together to solve a problem I had. I wanted a selfhosted media downloader and podcast feed generator because some of my favourite shows do not provide a podcast feed.
+I'm no coder and this is a hacky solution that I put together to solve a problem I had. I wanted a selfhosted media downloader and podcast feed generator because some of my favourite shows did not provide a podcast feed.
 
 This application will:
 
