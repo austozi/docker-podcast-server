@@ -1,5 +1,5 @@
 # Podcast Server
-A podcast server and feed generator based on yt-dlp, Podcats and Nginx, dockerised.
+A podcast server and feed generator, dockerised.
 
 ## What this is
 
