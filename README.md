@@ -1,6 +1,6 @@
 # Podcast Server
 
-I'm no coder and this is a hacky solution that I put together to solve a problem I had. I wanted a selfhosted media downloader and podcast feed generator because some of my favourite shows did not provide a podcast feed.
+I am no coder and this is a hacky solution that I put together to solve a problem I had. I wanted a selfhosted media downloader and podcast feed generator because some of my favourite shows did not provide a podcast feed.
 
 This application will:
 
