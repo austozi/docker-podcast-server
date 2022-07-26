@@ -9,7 +9,7 @@ This application will:
 
 - Download media files from the web using [yt-dlp](https://github.com/yt-dlp/yt-dlp) as save them as MP3 files on the server. Thus, it supports any media site that yt-dlp supports.
 - Generate a podcast feed of the MP3 files using [Podcats](https://github.com/jakubroztocil/podcats).
-- Serve the podcast feed and MP3 files using the Nginx web server (based on [linuxserver/nginx](https://hub.docker.io/r/linuxserver/nginx)).
+- Serve the podcast feed and MP3 files using the Nginx web server (based on [linuxserver/nginx](https://hub.docker.com/r/linuxserver/nginx)).
 
 ## Building the image
 
