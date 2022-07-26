@@ -7,9 +7,9 @@ I'm no coder and this is a hacky solution that I put together to solve a problem
 
 This application will:
 
-- Download media files from the web using yt-dlp as save them as mp3 files on the server.
-- Generate a podcast feed of the mp3 files using [Podcats](https://github.com/jakubroztocil/podcats).
-- Serve the podcast feed and mp3 files using the Nginx web server (based on [linuxserver/nginx](https://hub.docker.io/r/linuxserver/nginx)).
+- Download media files from the web using [yt-dlp](https://github.com/yt-dlp/yt-dlp) as save them as MP3 files on the server.
+- Generate a podcast feed of the MP3 files using [Podcats](https://github.com/jakubroztocil/podcats).
+- Serve the podcast feed and MP3 files using the Nginx web server (based on [linuxserver/nginx](https://hub.docker.io/r/linuxserver/nginx)).
 
 ## Building the image
 
