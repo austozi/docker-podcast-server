@@ -8,7 +8,7 @@ This application will:
 - Generate a podcast feed of the MP3 files using [Podcats](https://github.com/jakubroztocil/podcats).
 - Serve the podcast feed and MP3 files using the Nginx web server (based on [linuxserver/nginx](https://hub.docker.com/r/linuxserver/nginx)).
 
-## Building the image
+## Build the image
 
 1. Clone this repository using `git clone`, or download the latest release.
 2. Navigate to the root source folder and run `docker build .`.
