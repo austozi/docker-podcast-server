@@ -1,0 +1,34 @@
+#!/usr/bin/with-contenv bash
+
+################################################################################
+# refresh
+# =======
+# Copyright 2022 austozi.
+# Shell script to refresh the podcast feed.
+################################################################################
+
+echo "Looking for new episodes to download..."
+URL_FILE=/config/urls.txt
+if [ ! -f "$URL_FILE" ]; then
+	echo "https://www.bbc.co.uk/programmes/b007mf4f/episodes/player" > "$URL_FILE"
+	chown $PUID:$PGID "$URL_FILE"
+fi
+yt-dlp -x --audio-format mp3 -a "$URL_FILE" -o "/config/www/static/%(title)s.%(ext)s"
+chown -R $PUID:$PGID "/config/www/static"
+
+echo "Updating podcast feed..."
+XML_FILE=/config/www/index.xml
+podcats --host localhost --port 5000 --title "$PODCAST_TITLE" --link "$PODCAST_LINK" generate /config/www/static > "$XML_FILE"
+sed -i "s|http://localhost:5000|$BASE_URL|g" "$XML_FILE"
+sed -E -i "s|<description>.+</description>|<description>$PODCAST_DESCRIPTION</description>|" "$XML_FILE"
+sed -i "s|</link>|</link><image><url>$PODCAST_IMAGE</url></image>|" "$XML_FILE"
+chown $PUID:$PGID "$XML_FILE"
+
+echo "Writing front page..."
+HTML_FILE=/config/www/index.html
+echo "<!DOCTYPE html><html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"\" xml:lang=\"\"><head><meta charset=\"utf-8\" /><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=yes\" /><title>$PODCAST_TITLE</title><link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\"/></head><body><h1>$PODCAST_TITLE</h1><p><a href=\"$PODCAST_LINK\" target=\"_blank\"><img src=\"$PODCAST_IMAGE\" /></a></p><p>To subscribe to this podcast feed, copy the link below and paste it into your podcast player's subscription form.</p><p><a href=\"$BASE_URL/index.xml\">$BASE_URL/index.xml</a></p></body></html>" > "$HTML_FILE"
+chown $PUID:$PGID "$HTML_FILE"
+
+echo "Standing by till next refresh ($PODCAST_UPDATE_INTERVAL)..."
+sleep $PODCAST_UPDATE_INTERVAL
+sudo -u abc refresh
