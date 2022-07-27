@@ -31,4 +31,4 @@ chown $PUID:$PGID "$HTML_FILE"
 
 echo "Standing by till next refresh ($PODCAST_UPDATE_INTERVAL)..."
 sleep $PODCAST_UPDATE_INTERVAL
-sudo -u abc refresh
+refresh
