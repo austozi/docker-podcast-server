@@ -1,2 +1,2 @@
 #!/usr/bin/with-contenv bash
-/usr/local/bin/refresh &
+refresh &
