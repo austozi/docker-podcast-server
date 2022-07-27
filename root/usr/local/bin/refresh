@@ -29,6 +29,7 @@ HTML_FILE=/config/www/index.html
 echo "<!DOCTYPE html><html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"\" xml:lang=\"\"><head><meta charset=\"utf-8\" /><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=yes\" /><title>$PODCAST_TITLE</title><link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\"/></head><body><h1>$PODCAST_TITLE</h1><p><a href=\"$PODCAST_LINK\" target=\"_blank\"><img src=\"$PODCAST_IMAGE\" /></a></p><p>To subscribe to this podcast feed, copy the link below and paste it into your podcast player's subscription form.</p><p><a href=\"$BASE_URL/index.xml\">$BASE_URL/index.xml</a></p></body></html>" > "$HTML_FILE"
 chown $PUID:$PGID "$HTML_FILE"
 
+echo "Last refresh completed at `date`."
 echo "Standing by till next refresh ($PODCAST_UPDATE_INTERVAL)..."
 sleep $PODCAST_UPDATE_INTERVAL
 refresh
