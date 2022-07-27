@@ -12,7 +12,7 @@ This application will:
 
 1. Clone this repository using `git clone`, or download the latest release.
 2. Navigate to the root source folder and run `docker build .`.
-3. Alternatively, execute the script `./build_push.sh`. This will build the image, tag it and push it to [Docker Hub](https://hub.docker.com).
+3. Alternatively, modify and execute the script `./build_push.sh`. This will build the image, tag it and push it to [Docker Hub](https://hub.docker.com).
 
 ## Deploy the container
 
