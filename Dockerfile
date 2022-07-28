@@ -20,6 +20,8 @@ RUN python3 -m pip install -U yt-dlp podcats
 
 COPY ./root/ /
 
+RUN chmod +x /usr/local/bin/refresh
+
 RUN mkdir -p /config/www
 WORKDIR /config/www
 
