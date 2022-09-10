@@ -7,6 +7,9 @@
 # Shell script to refresh the podcast feed.
 ################################################################################
 
+echo "Auto-updating yt-dlp..."
+python3 -m pip install -U yt-dlp
+
 echo "Looking for new episodes to download..."
 URL_FILE=/config/urls.txt
 if [ ! -f "$URL_FILE" ]; then
