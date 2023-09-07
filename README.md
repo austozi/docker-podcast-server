@@ -1,3 +1,5 @@
+**This repo is no longer maintained. I have replaced this with [Poddie](https://github.com/austozi/poddie) for my own use.**
+
 # Podcast Server
 
 I am no coder and this is a hacky solution that I put together to solve a problem I had. I wanted a selfhosted media downloader and podcast feed generator because some of my favourite shows did not provide a podcast feed.
